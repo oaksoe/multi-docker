@@ -6,7 +6,7 @@ before_install:
     - docker build -t oaksoe/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true oaksoe/docker-react npm test
+    - docker run -e CI=true oaksoe/react-test npm test
 
 after_success:
     - docker build -t oaksoe/multi-client ./client
